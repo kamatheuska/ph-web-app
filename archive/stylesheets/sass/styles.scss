@@ -1,0 +1,11 @@
+
+@import 'partials/reset';
+@import 'partials/fonts';
+
+body {
+  font-family: $font-header;
+}
+
+@import 'partials/navbar';
+@import 'partials/index';
+@import 'partials/header';
