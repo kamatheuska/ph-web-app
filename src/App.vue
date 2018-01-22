@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-navbar></app-navbar> 
-    <div class="container">
+    <div>
       <app-welcome></app-welcome>
     </div>    
   </div>
@@ -67,7 +67,7 @@ html, body, ul {
   margin: 0;
   padding: 0;
   font-size: 14px;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -75,7 +75,8 @@ html, body, ul {
 
 h1, h2, h3, h4,
 p, button {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
+
 }
 
 /*font-family: 'Roboto', sans-serif;
@@ -89,12 +90,17 @@ font-family: 'Lato', sans-serif;*/
 \*-------------------------------------------*/
 
 .container {
+  margin: 2rem 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-gap: 2rem;
+  max-height: 200px;
 }
 .box {
-  margin: 2rem auto;
-  padding: 2rem;
-  min-width: 40rem;
-  max-width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 1rem 3rem;
 }
 .box-nav {
@@ -106,8 +112,13 @@ font-family: 'Lato', sans-serif;*/
   margin: 1.2rem 3.8rem;
   display: inline-block;
 }
+.header {
+  grid-column: 2 / span 2;
+  grid-row: 1 / span 1;
+}
 .box.actions {
-  width: 100%;
+  grid-column: 2 / span 1;
+  grid-row: 2 / span 1;
 }
 .actions .buttons {
   width: 80%;
@@ -117,6 +128,7 @@ font-family: 'Lato', sans-serif;*/
   margin: 1rem auto;
   display: inline-block;
 }
+
 
 
 
@@ -174,9 +186,9 @@ nav.box.background ul {
   font-weight: 100;
 }
 
-.header-logo p, .header-logo p span {
-  font-size: 2rem;
-  text-align: justify;
+.header p, .header p span {
+  font-size: 1.3rem;
+  text-align: right;
   text-justify: inter-word;
   letter-spacing: 2px;
   line-height: 150%;
@@ -185,11 +197,11 @@ nav.box.background ul {
   font-weight: 530;
 }
 
-.header-logo p span {
+.header p span {
   color: #CC0000;
 }
 .actions p {
-  color: #5b716a
+  color: #1D292F;
 }
 
 /*-------------------------------------------*\
@@ -197,15 +209,13 @@ nav.box.background ul {
 \*-------------------------------------------*/
 
 
-.header-logo img {
+.header img {
   margin: 0 auto;
   height: auto;
   display: inline-block;
-  max-height: 140px;
+  max-height: 90px;
   max-width: 50%;
-  min-width: 20rem;
   opacity: 0.6;
-  float: right;
 }
 
 
@@ -232,10 +242,14 @@ nav.box.background ul {
 }
 .buttons div button:hover,
 .buttons button:focus {
+}
+
+button:hover {
   box-shadow: 0 0.5em 0.5em -0.4em;
   transform: translateY(-0.45em);
   color: #FFFFF5;
-  background: #5b716a;
+  background: red;
+
 }
 
 

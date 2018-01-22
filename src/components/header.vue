@@ -1,10 +1,8 @@
 <template>
-  <div>
-    <div class="header-logo box box-background box-border">
+    <div class="header box box-background box-border">
       <img class="" src="../assets/logo/logoEngraved.png" alt="Logo">
-      <p>Bienvenido, <span>{{users[1]}}</span>...</p>    
-    </div>   
-  </div>
+      <p>Bienvenido, <span>{{users[1]}}</span>...</p> 
+    </div> 
 </template>
 
 <script>

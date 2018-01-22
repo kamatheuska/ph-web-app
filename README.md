@@ -8,4 +8,6 @@
 - Make @media queries to
    - Regulate *.box* min-width.
    - Make *.box* margins responsive.
+- Work on the CSS Grid Layout.
+- Fix the hover effect on buttons from welcome.
 

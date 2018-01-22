@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="container">
     <app-header></app-header>
     <app-actions></app-actions>
   </div>
@@ -9,7 +9,6 @@
 export default {
   data () {
     return {
-      buttons: ['buscar', 'agregar', 'editar', 'borrar']
     }
   }
 }
