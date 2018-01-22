@@ -57,18 +57,29 @@ export default {
 /*-------------------------------------------*\
   #RESET RULES
 \*-------------------------------------------*/
-
+html, body {
+  height: 100vh;
+  width: 100%;
+  /*overflow: hidden;*/
+}
 html, body, ul {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-size: 14px;
+  font-family: 'Roboto', sans-serif;
 }
 *, *:before, *:after {
   box-sizing: inherit;
 }
 
+h1, h2, h3, h4,
+p, button {
+  font-family: 'Lato', sans-serif;
+}
 
+/*font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;*/
 
 
 
@@ -78,13 +89,12 @@ html, body, ul {
 \*-------------------------------------------*/
 
 .container {
-  margin: 0 15rem;
 }
 .box {
-  margin: 2rem 0;
+  margin: 2rem auto;
   padding: 2rem;
-  min-height: 35rem;
   min-width: 40rem;
+  max-width: 30%;
   padding: 1rem 3rem;
 }
 .box-nav {
@@ -96,6 +106,18 @@ html, body, ul {
   margin: 1.2rem 3.8rem;
   display: inline-block;
 }
+.box.actions {
+  width: 100%;
+}
+.actions .buttons {
+  width: 80%;
+  margin: 0 10%;
+}
+.actions .buttons div {
+  margin: 1rem auto;
+  display: inline-block;
+}
+
 
 
 
@@ -114,10 +136,11 @@ body {
 .box-border {
   border-bottom:  3px #85a4b2 solid;
   border-right:   1px #85a4b2 solid;
-  border-radius:  1rem;
+  border-radius:  0.7rem;
 }
 nav.box-background {
   border-radius: 0;
+  background: #1d292f;
 }
 
 nav.box.background ul {
@@ -157,31 +180,67 @@ nav.box.background ul {
   text-justify: inter-word;
   letter-spacing: 2px;
   line-height: 150%;
-  color: #2F566A;
-  color: #3E738E;
+  /*color: #2F566A;*/
+  color: #1D292F;
   font-weight: 530;
 }
 
 .header-logo p span {
   color: #CC0000;
 }
-
+.actions p {
+  color: #5b716a
+}
 
 /*-------------------------------------------*\
   #IMAGES
 \*-------------------------------------------*/
 
 
-  .header-logo img {
-    margin: 0 auto;
-    height: auto;
-    display: inline-block;
-    max-height: 140px;
-    max-width: 50%;
-    min-width: 20rem;
-    opacity: 0.6;
-    float: right;
-  }
+.header-logo img {
+  margin: 0 auto;
+  height: auto;
+  display: inline-block;
+  max-height: 140px;
+  max-width: 50%;
+  min-width: 20rem;
+  opacity: 0.6;
+  float: right;
+}
+
+
+
+
+
+/*-------------------------------------------*\
+  #BUTTONS
+\*-------------------------------------------*/
+
+.buttons button {
+  background: none;
+  border: 2px solid;
+  font: inherit;
+  line-height: 1;
+  margin: 0.5rem 1rem 0.5rem 0rem;
+  padding: 0.8em 1.6em;
+  font-size: 1rem;
+  color: #5b716a;
+  /*color: #A3BDBA;*/ /*Default color*/
+  text-shadow: 0px 1px 0px rgba(0,0,0, .34);
+  font-weight: 700;
+  font-family: monospace;
+}
+.buttons div button:hover,
+.buttons button:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em;
+  transform: translateY(-0.45em);
+  color: #FFFFF5;
+  background: #5b716a;
+}
+
+
+
+
 /*-------------------------------------------*\
   #COLOR PALETTES AND #PATTERNS
 \*-------------------------------------------*/
@@ -200,6 +259,7 @@ SHADES OF BLUE:
                 #2F566A
                 #3E738E
 LIGHT BLUE:     #99EBFF
+BLUE GREEN DARK: #1D292F
 
 Concrete:
   url("./assets/patterns/concrete.png")
