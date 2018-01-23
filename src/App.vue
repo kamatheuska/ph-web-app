@@ -70,6 +70,9 @@ html, body, ul {
   font-family: 'Lato', sans-serif;
 }
 *, *:before, *:after {
+  font-family: Tahoma, sans-serif;
+  font-weight: 100;
+  color: #1D292F;
   box-sizing: inherit;
 }
 
@@ -91,37 +94,7 @@ font-family: 'Lato', sans-serif;*/
 
 /*  The following is the implementation fo CSS Grid Layout  */
 
-.container {
-  height: 100%;
-  margin: 0;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 4rem 1rem auto auto 1rem 4rem;
-  grid-gap: 1rem;
-}
-.box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem 3rem;
-}
-.navbar {
-  grid-column: 1 / -1;
-  text-align: center;
-}
-.header {
-  grid-column: 4 / 10;
-  grid-row: 3 / 4;
-}
-.actions {
-  grid-column: 4 / 7;
-  grid-row: 4 / 5;
-}
-.footer {
-  grid-column: 1 / -1;
-  grid-row: 5 / -1;
-  text-align: center;
-}
+
 .box-nav ul li {
   display: inline-block;
 }
@@ -138,7 +111,6 @@ font-family: 'Lato', sans-serif;*/
   margin: 1rem auto;
   display: inline-block;
 }
-
 
 
 
@@ -170,28 +142,27 @@ nav.box-background, footer.box-background {
 /*-------------------------------------------*\
   #HEADINGS
 \*-------------------------------------------*/
-
-
-
+h1 {
+  display: block;
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
 
 
 /*-------------------------------------------*\
   #TEXT AND LINKS
 \*-------------------------------------------*/
-.nav-text {
-  margin: 0 3rem;
-}
-.nav-text  {
+.nav-text a {
   text-decoration: none;
   font-size: 1.7rem;
   font-weight: 900;
+  margin: 0 3rem;
 }
-*, *:before, *:after {
-  font-family: Tahoma, sans-serif;
-  color: #A7C8D8; 
-  font-weight: 100;
+.nav-text path {
+  color: #A7C8D8;
 }
-
 .header p, .header p span {
   font-size: 1.3rem;
   text-align: right;
@@ -199,17 +170,15 @@ nav.box-background, footer.box-background {
   letter-spacing: 2px;
   line-height: 150%;
   /*color: #2F566A;*/
-  color: #1D292F;
   font-weight: 530;
 }
 
 .header p span {
   color: #CC0000;
 }
-.actions p {
-  color: #1D292F;
+.box-footer p {
+  color: #A7C8D8;
 }
-
 /*-------------------------------------------*\
   #IMAGES
 \*-------------------------------------------*/
@@ -222,6 +191,7 @@ nav.box-background, footer.box-background {
   max-height: 90px;
   max-width: 50%;
   opacity: 0.6;
+  float: left;
 }
 
 
@@ -258,6 +228,86 @@ button:hover {
 
 
 
+
+
+/*-------------------------------------------*\
+  #GRIDS
+\*-------------------------------------------*/
+
+/* MAIN GRID FOR COMPONENTS */
+.container-welcome, .container-add, .container-search {
+  height: 100%;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 4rem 1rem auto auto 1rem 4rem;
+  grid-gap: 1rem;
+}
+.box {
+  /*justify-content: center;*/
+  padding: 1rem 3rem;
+}
+.navbar {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.header {
+  grid-column: 4 / 10;
+  grid-row: 3 / 4;
+}
+.actions {
+  grid-column: 4 / 7;
+  grid-row: 4 / 5;
+}
+.footer {
+  grid-column: 1 / -1;
+  grid-row: 5 / -1;
+  text-align: center;
+}
+
+/* NESTED GRID FOR ADD COMPONENT */
+.add-grid {
+  grid-column: 4 / 10;
+  grid-row: 3 / 4;
+}
+.add-grid form {    
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(1rem, auto);
+  grid-gap: 0.2rem;
+} /*
+.add-grid h1 {
+  grid-column: 1 / -1;
+}*/
+
+
+/*-------------------------------------------*\
+  #FORMS
+\*-------------------------------------------*/
+.add-form {
+  text-align: center;
+}
+.add-form > label {
+  text-align: right;
+}
+.add-form > * , .search-form > * {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-family: 'Lato', sans-serif;
+  letter-spacing: 2px;
+  align-self: right;
+}
+.add-form input, textarea {
+  padding: 2px;
+  border: 1px #999 solid;
+}
+.search-form input {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+/*font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;*/
 
 /*-------------------------------------------*\
   #COLOR PALETTES AND #PATTERNS

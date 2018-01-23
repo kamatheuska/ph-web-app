@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container-welcome">
     <app-navbar class="navbar"></app-navbar>
     <app-header class="header"></app-header>
     <app-actions class="actions"></app-actions>

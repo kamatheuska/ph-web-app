@@ -1,10 +1,15 @@
 <template>
-  <div class="container">
+  <div class="container-search">
     <app-navbar class="navbar"></app-navbar>
-    <app-footer class="footer"></app-footer>
     <div class="header box box-background box-border">
-      <h1>This is the Search component</h1>      
+      <h2>This is the Search component</h2>
+      <hr><br>
+      <form class="search-form">
+        <label>Escribe una palabra clave:</label>
+        <input type="text" placeholder="palabra clave...">
+      </form>
     </div>
+    <app-footer class="footer"></app-footer>
   </div>  
 </template>
 
