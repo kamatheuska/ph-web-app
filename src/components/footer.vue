@@ -1,6 +1,6 @@
 <template>
-  <footer>
-    <p>Copyright 2016 Nicolas Ramirez &copy;</p>
+  <footer class="box-footer box-background">
+    <p> &copy; Copyright 2016 - Nicolas Ramirez</p>
   </footer>
 </template>
 

@@ -1,16 +1,25 @@
-import Vue from 'vue'
-import App from './App.vue'
-import Header from './components/header.vue'
-import Navbar from './components/navbar.vue'
-import Welcome from './components/welcome.vue'
-import Actions from './components/actions.vue'
 
-Vue.component('app-header', Header);
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+import App from './App.vue'
+import Routes  from './routes.js'
+
+import Navbar from './components/navbar.vue'
+import Footer from './components/footer.vue'
+
+Vue.use(VueRouter);
+
+const router = new VueRouter({
+  routes: Routes,
+  mode: 'history'
+});
+
 Vue.component('app-navbar', Navbar);
-Vue.component('app-welcome', Welcome);
-Vue.component('app-actions', Actions);
+Vue.component('app-footer', Footer);
 
 new Vue({
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
+  router: router
 })

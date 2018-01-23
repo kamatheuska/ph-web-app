@@ -1,17 +1,17 @@
 <template>
-  <div id="app">
-    <app-navbar></app-navbar> 
-    <div>
-      <app-welcome></app-welcome>
-    </div>    
-  </div>
+  <router-view></router-view>
 </template>
 
 <script>
-import superagent from 'superagent';
-//
+import superagent from 'superagent'
+import Welcome from './components/welcome.vue'
+
+// import Navbar from './components/navbar.vue'
+
 export default {
-  name: 'app',
+  components: {
+    'app-welcome': Welcome
+  },
   data () {
     return {
       msg: ''
@@ -89,13 +89,15 @@ font-family: 'Lato', sans-serif;*/
   #CONTAINERS
 \*-------------------------------------------*/
 
+/*  The following is the implementation fo CSS Grid Layout  */
+
 .container {
-  margin: 2rem 1rem;
+  height: 100%;
+  margin: 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-gap: 2rem;
-  max-height: 200px;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 4rem 1rem auto auto 1rem 4rem;
+  grid-gap: 1rem;
 }
 .box {
   display: flex;
@@ -103,22 +105,30 @@ font-family: 'Lato', sans-serif;*/
   align-items: center;
   padding: 1rem 3rem;
 }
-.box-nav {
-  width: 100%;
-  min-height: 2rem;
+.navbar {
+  grid-column: 1 / -1;
+  text-align: center;
+}
+.header {
+  grid-column: 4 / 10;
+  grid-row: 3 / 4;
+}
+.actions {
+  grid-column: 4 / 7;
+  grid-row: 4 / 5;
+}
+.footer {
+  grid-column: 1 / -1;
+  grid-row: 5 / -1;
   text-align: center;
 }
 .box-nav ul li {
-  margin: 1.2rem 3.8rem;
   display: inline-block;
 }
-.header {
-  grid-column: 2 / span 2;
-  grid-row: 1 / span 1;
-}
-.box.actions {
-  grid-column: 2 / span 1;
-  grid-row: 2 / span 1;
+.box-nav ul {
+  height: 0;
+  padding-top: 1rem;
+
 }
 .actions .buttons {
   width: 80%;
@@ -150,15 +160,10 @@ body {
   border-right:   1px #85a4b2 solid;
   border-radius:  0.7rem;
 }
-nav.box-background {
+nav.box-background, footer.box-background {
   border-radius: 0;
   background: #1d292f;
 }
-
-nav.box.background ul {
-  width: 100%;
-}
-
 
 
 
@@ -173,11 +178,12 @@ nav.box.background ul {
 /*-------------------------------------------*\
   #TEXT AND LINKS
 \*-------------------------------------------*/
-
-.nav-text a {
+.nav-text {
+  margin: 0 3rem;
+}
+.nav-text  {
   text-decoration: none;
-  font-size: 2rem;
-  text-shadow: 0px 1px 0px rgba(255, 255, 255, .5);
+  font-size: 1.7rem;
   font-weight: 900;
 }
 *, *:before, *:after {
@@ -228,6 +234,7 @@ nav.box.background ul {
 
 .buttons button {
   background: none;
+  width: 9.5rem;
   border: 2px solid;
   font: inherit;
   line-height: 1;
@@ -238,17 +245,14 @@ nav.box.background ul {
   /*color: #A3BDBA;*/ /*Default color*/
   text-shadow: 0px 1px 0px rgba(0,0,0, .34);
   font-weight: 700;
-  font-family: monospace;
-}
-.buttons div button:hover,
-.buttons button:focus {
 }
 
+
 button:hover {
-  box-shadow: 0 0.5em 0.5em -0.4em;
-  transform: translateY(-0.45em);
+  /*transform: translateY(-0.45em);*/
   color: #FFFFF5;
   background: red;
+  border: 2px #5b716a solid;
 
 }
 

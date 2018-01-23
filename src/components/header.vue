@@ -1,5 +1,5 @@
 <template>
-    <div class="header box box-background box-border">
+    <div class="box box-background box-border">
       <img class="" src="../assets/logo/logoEngraved.png" alt="Logo">
       <p>Bienvenido, <span>{{users[1]}}</span>...</p> 
     </div> 
