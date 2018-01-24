@@ -16,14 +16,14 @@ export default {
     return {
       msg: ''
     }
-  },
-  methods: {
-    // fetchData: function() {
-    //   superagent.get('/api/test').then((response) => {
-    //     this.msg = `${response.body.name} ${response.body.msg}`;
-    //   });
-    // }
   }
+  // methods: {
+  //   fetchData: function() {
+  //     superagent.get('/api/test').then((response) => {
+  //       this.msg = `${response.body.name} ${response.body.msg}`;
+  //     });
+  //   }
+  // },
   // created() {
   //   this.fetchData();
   // }
@@ -40,13 +40,14 @@ export default {
 
   TABLE OF CONTENTS:
 
-  1 -  RESET RULES
-  2 -  CONTAINERS
-  3 -  BACKGROUNDS & BORDERS
-  4 -  HEADINGS
-  5 -  TEXT AND LINKS
-  6 -  IMAGES
-  7 -  COLOR PALLETE
+  -  RESET RULES
+  -  BACKGROUNDS & BORDERS
+  -  BUTTONS
+  -  CONTAINERS
+  -  HEADINGS
+  -  IMAGES
+  -  TEXT AND LINKS
+  -  NOTES
 
 \°-------------------------------------------°/
 \*===========================================*/
@@ -55,7 +56,7 @@ export default {
 
 
 /*-------------------------------------------*\
-  #RESET RULES
+#RESET RULES
 \*-------------------------------------------*/
 html, body {
   height: 100vh;
@@ -66,15 +67,15 @@ html, body, ul {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-size: 14px;
+  font-size: 10px;
   font-family: 'Lato', sans-serif;
-}
+}/*
 *, *:before, *:after {
   font-family: Tahoma, sans-serif;
   font-weight: 100;
   color: #1D292F;
   box-sizing: inherit;
-}
+}*/
 
 h1, h2, h3, h4,
 p, button {
@@ -82,44 +83,13 @@ p, button {
 
 }
 
-/*font-family: 'Roboto', sans-serif;
-font-family: 'Lato', sans-serif;*/
 
 
 
 
 /*-------------------------------------------*\
-  #CONTAINERS
+#BACKGROUNDS AND #BORDERS
 \*-------------------------------------------*/
-
-/*  The following is the implementation fo CSS Grid Layout  */
-
-
-.box-nav ul li {
-  display: inline-block;
-}
-.box-nav ul {
-  height: 0;
-  padding-top: 1rem;
-
-}
-.actions .buttons {
-  width: 80%;
-  margin: 0 10%;
-}
-.actions .buttons div {
-  margin: 1rem auto;
-  display: inline-block;
-}
-
-
-
-
-
-/*-------------------------------------------*\
-  #BACKGROUNDS AND #BORDERS
-\*-------------------------------------------*/
-
 body {
   background-color: #222;
   background: url("./assets/patterns/wavegrid.png") repeat;
@@ -134,72 +104,16 @@ body {
 }
 nav.box-background, footer.box-background {
   border-radius: 0;
-  background: #1d292f;
+  /*background: #660000;*/
+  background: #1D292F;
+  
 }
-
-
-
-/*-------------------------------------------*\
-  #HEADINGS
-\*-------------------------------------------*/
-h1 {
-  display: block;
-}
-h2 {
-  text-align: center;
-  font-size: 2rem;
-}
-
-
-/*-------------------------------------------*\
-  #TEXT AND LINKS
-\*-------------------------------------------*/
-.nav-text a {
-  text-decoration: none;
-  font-size: 1.7rem;
-  font-weight: 900;
-  margin: 0 3rem;
-}
-.nav-text path {
-  color: #A7C8D8;
-}
-.header p, .header p span {
-  font-size: 1.3rem;
-  text-align: right;
-  text-justify: inter-word;
-  letter-spacing: 2px;
-  line-height: 150%;
-  /*color: #2F566A;*/
-  font-weight: 530;
-}
-
-.header p span {
-  color: #CC0000;
-}
-.box-footer p {
-  color: #A7C8D8;
-}
-/*-------------------------------------------*\
-  #IMAGES
-\*-------------------------------------------*/
-
-
-.header img {
-  margin: 0 auto;
-  height: auto;
-  display: inline-block;
-  max-height: 90px;
-  max-width: 50%;
-  opacity: 0.6;
-  float: left;
-}
-
 
 
 
 
 /*-------------------------------------------*\
-  #BUTTONS
+#BUTTONS
 \*-------------------------------------------*/
 
 .buttons button {
@@ -216,14 +130,11 @@ h2 {
   text-shadow: 0px 1px 0px rgba(0,0,0, .34);
   font-weight: 700;
 }
-
-
 button:hover {
   /*transform: translateY(-0.45em);*/
   color: #FFFFF5;
   background: red;
   border: 2px #5b716a solid;
-
 }
 
 
@@ -231,7 +142,56 @@ button:hover {
 
 
 /*-------------------------------------------*\
-  #GRIDS
+#CONTAINERS
+\*-------------------------------------------*/
+
+/*  The following is the implementation fo CSS Grid Layout  */
+
+
+.actions .buttons {
+  width: 80%;
+  margin: 0 10%;
+}
+.actions .buttons div {
+  margin: 1rem auto;
+  display: inline-block;
+}
+
+
+
+
+
+/*-------------------------------------------*\
+#FORMS
+\*-------------------------------------------*/
+.add-form {
+  text-align: center;
+}
+.add-form > label {
+  text-align: right;
+}
+.add-form > * , .search-form > * {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  /*font-family: 'Lato', sans-serif;*/
+  letter-spacing: 2px;
+  align-self: right;
+}
+.add-form input, textarea {
+  padding: 2px;
+  border: 1px #999 solid;
+}
+.search-form input {
+  margin-top: 0.4rem;
+  width: 100%;
+}
+
+
+
+
+
+/*-------------------------------------------*\
+#GRIDS
 \*-------------------------------------------*/
 
 /* MAIN GRID FOR COMPONENTS */
@@ -239,17 +199,16 @@ button:hover {
   height: 100%;
   margin: 0;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: 4rem 1rem auto auto 1rem 4rem;
+  grid-template-columns: 15rem repeat(10, 1fr) 15rem;
+  grid-template-rows: 7rem 1rem auto auto 1rem 4rem;
   grid-gap: 1rem;
 }
 .box {
   /*justify-content: center;*/
   padding: 1rem 3rem;
 }
-.navbar {
+.box-nav {
   grid-column: 1 / -1;
-  text-align: center;
 }
 .header {
   grid-column: 4 / 10;
@@ -277,75 +236,108 @@ button:hover {
   grid-gap: 0.2rem;
 } /*
 .add-grid h1 {
-  grid-column: 1 / -1;
+grid-column: 1 / -1;
 }*/
 
 
+
+
+
 /*-------------------------------------------*\
-  #FORMS
+#HEADINGS
 \*-------------------------------------------*/
-.add-form {
-  text-align: center;
+h1 {
+  display: block;
+  font-size: 3.5rem;
 }
-.add-form > label {
-  text-align: right;
+h2 {
+  font-size: 1.8rem;
 }
-.add-form > * , .search-form > * {
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-  font-family: 'Lato', sans-serif;
-  letter-spacing: 2px;
-  align-self: right;
-}
-.add-form input, textarea {
-  padding: 2px;
-  border: 1px #999 solid;
-}
-.search-form input {
-  margin-top: 0.4rem;
-  width: 100%;
+h3 {
+  font-size: 2rem;  
 }
 
-/*font-family: 'Roboto', sans-serif;
-font-family: 'Lato', sans-serif;*/
+
+
 
 /*-------------------------------------------*\
-  #COLOR PALETTES AND #PATTERNS
+#IMAGES
+\*-------------------------------------------*/
+
+
+
+
+
+/*-------------------------------------------*\
+#TEXT AND LINKS
+\*-------------------------------------------*/
+
+.nav-icons a {
+text-decoration: none;
+font-size: 1.7rem;
+font-weight: 900;
+}
+.box-footer p {
+  color: #A7C8D8;
+}
+
+
+
+
+
+
+/*-------------------------------------------*\
+#COLOR PALETTES AND #PATTERNS
 \*-------------------------------------------*/
 
 /*
+
+---> COLORS
                 #DEDAB5
                 #B4A98B
                 #5C6B66
                 #FFFFF5
                 #A3BDBA
-LIGHTEST GREEN: #D2E0DE 
-DARKEST GREEN:  #242D2A 
-LIGHT ORANGE:   #FFD1B3  
 
-SHADES OF BLUE:
+  *** GREENS ***
+  LIGHTEST GREEN: #D2E0DE 
+  DARKEST GREEN:  #242D2A 
+  LIGHT ORANGE:   #FFD1B3  
+
+
+ *** SHADES OF BLUE *** 
                 #2F566A
                 #3E738E
-LIGHT BLUE:     #99EBFF
-BLUE GREEN DARK: #1D292F
+  LIGHT BLUE:     #99EBFF
+  BLUE GREEN DARK: #1D292F
+
+.............................................................
+
+---> PATTERNS
 
 Concrete:
-  url("./assets/patterns/concrete.png")
+url("./assets/patterns/concrete.png")
 Confectionary:
-  url("./assets/patterns/confectionary.png")
+url("./assets/patterns/confectionary.png")
 Cork:
-  url("./assets/patterns/cork.png")
+url("./assets/patterns/cork.png")
 Dark:
-  url("./assets/patterns/dark.png")
+url("./assets/patterns/dark.png")
 Light:
-  url("./assets/patterns/light.png")
+url("./assets/patterns/light.png")
 Round:
-  url("./assets/patterns/round.png")
+url("./assets/patterns/round.png")
 Wavegrid:
-  url("./assets/patterns/wavegrid.png")
+url("./assets/patterns/wavegrid.png")
 Waves:
-  url("./assets/patterns/waves.png")
-  */
+url("./assets/patterns/waves.png")
+
+.............................................................
+
+---> FONTS
+
+font-family: 'Roboto', sans-serif;
+font-family: 'Lato', sans-serif;*/
 
 
 

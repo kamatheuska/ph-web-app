@@ -1,7 +1,6 @@
 <template>
   <div class="container-welcome">
-    <app-navbar class="navbar"></app-navbar>
-    <app-header class="header"></app-header>
+    <app-navbar></app-navbar>
     <app-actions class="actions"></app-actions>
     <app-footer class="footer"></app-footer>
   </div>
