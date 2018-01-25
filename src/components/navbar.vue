@@ -4,7 +4,7 @@
       <img src="../assets/logo/logoWhite.png" alt="Logo">
     </div>
     <div class="header-msg">
-      <h2>Bienvenido, <span>{{routes.users[1]}}</span>...</h2>       
+      <h2>Bienvenido, <span>{{user.username}}</span>...</h2>       
     </div>
     <div class="nav-icons">
       <ul>
@@ -37,23 +37,31 @@
 </template>
 
 <script>
+import Login from './login.vue'
+
 export default {
   data () {
     return {
       routes: {
         icons: ['', 'fas fa-plus', 'fas fa-search', 'fas fa-cog'],
-        routes: ['/', '/home', '/add', '/search'],
-        users: ['Ivonne', 'Nicolas', 'Francisco']
+        routes: ['/', '/home', '/add', '/search']
+      },
+      user: {
+        username: 'Ivonne'
       }
     }
-  // methods: {
-  //   fetchData: function() {
-  //     superagent.get('/api/test').then((response) => {
-  //       this.msg = `${response.body.name} ${response.body.msg}`;
-  //     });
-  //   }
-  // },
-}
+  },
+  props:['user-data'],
+  methods: {
+    fetchUser: function() {
+
+    }
+    // fetchData: function() {
+    //   superagent.get('/api/test').then((response) => {
+    //     this.msg = `${response.body.name} ${response.body.msg}`;
+    //   });
+    // }
+  },
 }
 </script>
 

@@ -4,18 +4,17 @@
 
 <script>
 import superagent from 'superagent'
-import Welcome from './components/welcome.vue'
 
-// import Navbar from './components/navbar.vue'
+import Login from './components/login.vue'
 
 export default {
-  components: {
-    'app-welcome': Welcome
-  },
   data () {
     return {
       msg: ''
     }
+  },
+  components: {
+    'app-login': Login
   }
   // methods: {
   //   fetchData: function() {
@@ -82,6 +81,10 @@ p, button {
   font-family: 'Roboto', sans-serif;
 
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
 
 
@@ -130,12 +133,6 @@ nav.box-background, footer.box-background {
   text-shadow: 0px 1px 0px rgba(0,0,0, .34);
   font-weight: 700;
 }
-button:hover {
-  /*transform: translateY(-0.45em);*/
-  color: #FFFFF5;
-  background: red;
-  border: 2px #5b716a solid;
-}
 
 
 
@@ -156,6 +153,10 @@ button:hover {
   margin: 1rem auto;
   display: inline-block;
 }
+.box {
+  /*justify-content: center;*/
+  padding: 1rem 3rem;
+}
 
 
 
@@ -164,20 +165,20 @@ button:hover {
 /*-------------------------------------------*\
 #FORMS
 \*-------------------------------------------*/
-.add-form {
+.add-form, .login-form {
   text-align: center;
 }
-.add-form > label {
+.add-form > label .login-form > label {
   text-align: right;
 }
-.add-form > * , .search-form > * {
+.add-form > * , .login-form > * , .search-form > * {
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
   /*font-family: 'Lato', sans-serif;*/
   letter-spacing: 2px;
   align-self: right;
 }
-.add-form input, textarea {
+.add-form input, .login-form input, textarea {
   padding: 2px;
   border: 1px #999 solid;
 }
@@ -202,10 +203,6 @@ button:hover {
   grid-template-columns: 15rem repeat(10, 1fr) 15rem;
   grid-template-rows: 7rem 1rem auto auto 1rem 4rem;
   grid-gap: 1rem;
-}
-.box {
-  /*justify-content: center;*/
-  padding: 1rem 3rem;
 }
 .box-nav {
   grid-column: 1 / -1;
@@ -298,6 +295,7 @@ font-weight: 900;
                 #5C6B66
                 #FFFFF5
                 #A3BDBA
+NARANJA PH      #D18527
 
   *** GREENS ***
   LIGHTEST GREEN: #D2E0DE 

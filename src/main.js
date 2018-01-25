@@ -7,6 +7,7 @@ import Routes  from './routes.js'
 
 import Navbar from './components/navbar.vue'
 import Footer from './components/footer.vue'
+import Signup from './components/signup.vue'
 
 Vue.use(VueRouter);
 
@@ -17,6 +18,7 @@ const router = new VueRouter({
 
 Vue.component('app-navbar', Navbar);
 Vue.component('app-footer', Footer);
+Vue.component('app-signup', Signup);
 
 new Vue({
   el: '#app',

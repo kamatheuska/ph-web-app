@@ -11,18 +11,19 @@
 
         <label for="name">Descripción: </label>
         <textarea name="description" id="" cols="30" rows="6asd"></textarea>
-      
-     
+        
+        
         <label for="name">Referencia: </label>
         <input type="text" placeholder="A234">
-      
-     
+        
+        
         <label for="number">Cantidad: </label>
         <input type="number" placeholder="1">
-      
-     
+        
+        
         <label for="name">Precio: </label>
         <input type="number" placeholder="300">
+
 
       </form>
     </div>
